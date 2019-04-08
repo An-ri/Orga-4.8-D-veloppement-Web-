@@ -21,4 +21,5 @@ Template.hello.events({
   },
 
   //--
+  //test github push
 });
