@@ -14,7 +14,7 @@ Pour le modifier:
 3) Prendre "client" et "server" à l'aide de ctrl puis les faire glisser au niveau du "Drag files here"
 4) Appuyer sur "Commit changes" en bas de la page
 	
-#Mise en place Github
+# Mise en place Github
 
 Obtention du dossier sur votre compte et machine Obtenir une copie du projet sur votre compte github : fork. Pour créer une copie locale du projet git sur votre ordinateur :
 $ git clone https://github.com/An-ri/Orga-4.8-D-veloppement-Web-
