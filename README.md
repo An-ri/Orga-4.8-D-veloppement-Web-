@@ -12,4 +12,5 @@ Pour le modifier:
 1) Appuyer sur Upload files
 2) Aller dans le dossier Orga de votre ordinateur
 3) Prendre "client" et "server" à l'aide de ctrl puis les faire glisser au niveau du "Drag files here"
+4) Appuyer sur "Commit changes" en bas de la page
 	
