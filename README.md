@@ -6,4 +6,8 @@ Pour pouvoir utiliser le code:
 2) Créer un nouveau projet avec "meteor create Orga"
 3) Se déplacer dans le projet avec "cd Orga"
 4) Supprimer les dossiers Client et Server du nouveau projet puis les remplacer par ceux disponible dans ce repository 
+
+Pour le modifier:
+
+1) Appuyer sur Upload files
 	
