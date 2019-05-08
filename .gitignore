@@ -1,0 +1,6 @@
+.meteor/
+node_modules/
+tests/
+.directory
+package-lock.json
+package.json
