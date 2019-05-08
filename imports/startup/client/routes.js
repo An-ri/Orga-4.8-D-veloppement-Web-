@@ -22,6 +22,10 @@ Router.route('/SignUp', {
 	name:'inscription',
 });
 
+Router.route('/myAccount', {
+	name:'myAccount',
+});
+
 
 Router.onBeforeAction(function() {
 

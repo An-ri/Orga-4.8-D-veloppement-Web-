@@ -7,3 +7,4 @@ import '../imports/ui/tasks.js';
 import '../imports/ui/tasks2.js';
 import '../imports/ui/connection.js';
 import '../imports/ui/inscription.js';
+import '../imports/ui/profile.js';

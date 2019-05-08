@@ -1,5 +1,5 @@
 <template name='layoutOne'>
-		<nav class="nav-extended">
+		<nav class="nav-extended green">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo">Project management</a>
 				<!--<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
@@ -7,7 +7,7 @@
 					<li><a href="{{pathFor route='home'}}">Home</a></li>
 					{{#if currentUser}}
 						<li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
-						<li><a href="{{pathFor route='tasks2'}}">Tasks2</a></li>
+						<li><a href="{{pathFor route='myAccount'}}">Account</a></li>
 						<li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
 					{{else}}
 						<li><a href="{{pathFor route='connection'}}">SignIn</a></li>
