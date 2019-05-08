@@ -1,4 +1,11 @@
 <template name="connection">
+		{{#if currentUser}}
+			{{> home}}
+		{{else}}
+			{{> login}}
+		{{/if}}
+</template>
+<template name="login">
 		<div class="section"></div>
 		<div class="center">
 		<div class="container">
@@ -29,10 +36,7 @@
 						<div class='row'>
 							<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
 						</div>
-						<label style='margin-bottom: 15px; '>
-							Mot de passe oublié ?<a class='orange-text' href='#!'><b>click here!</b></a>
-						</label>
-						<p class="center">or sign up if its your first visit!</p>
+						<p class="center">sign up if its your first visit!</p>
 						<div class="row">
 								<a class="waves-effect center btn grey darken-4" href="{{ pathFor route='inscription' }}">Sign up</a>
 						</div>
@@ -41,4 +45,7 @@
 			</div>
 		</div>
 	</div>
+</template>
+<template name="test">
+	test
 </template>
