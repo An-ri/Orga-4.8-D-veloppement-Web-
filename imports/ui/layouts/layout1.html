@@ -2,7 +2,7 @@
 		<nav class="nav-extended">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo">Project management</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<!--<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="{{pathFor route='home'}}">Home</a></li>
 					{{#if currentUser}}
@@ -15,7 +15,7 @@
 				</ul>
 			</div>
 		</nav>
-		
+		<!--
 		<ul class="sidenav" id="mobile-demo">
 			<li><a href="{{pathFor route='home'}}">Home</a></li>
 			{{#if currentUser}}
@@ -26,6 +26,7 @@
 				<li><a href="{{pathFor route='connection'}}">SignIn</a></li>
 			{{/if}}
 		</ul>
+	-->
 	<article>	
 		{{> yield}}
 	</article>
