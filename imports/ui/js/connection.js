@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { check } from 'meteor/check'; 
 
-import './connection.html';
+import '../html/connection.html';
 
 Template.connection.events({
 	'submit form': function(event, template) {

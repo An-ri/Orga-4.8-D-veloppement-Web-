@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import './customregistration.html';
+import '../html/customregistration.html';
 
 
 

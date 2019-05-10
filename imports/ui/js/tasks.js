@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { Tasks } from '../api/tasks.js'
+import { Tasks } from '../../api/tasks.js'
 
-import './task.js';
-import './tasks.html';
+import '../js/task.js';
+import '../html/tasks.html';
 
 Template.tasks.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();

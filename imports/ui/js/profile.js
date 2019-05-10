@@ -1,0 +1,1 @@
+import '../html/profile.html';

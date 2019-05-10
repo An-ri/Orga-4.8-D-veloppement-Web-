@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { Tasks } from '../api/tasks.js'
+import { Tasks } from '../../api/tasks.js'
 
-import './task.js';
-import './tasks2.html';
+import '../js/task.js';
+import '../html/tasks2.html';
 
 window.Tasks = Tasks;
 
