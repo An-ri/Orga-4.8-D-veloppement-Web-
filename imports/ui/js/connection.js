@@ -16,9 +16,9 @@ Template.connection.events({
 			passwordVar,
 			function(error) {
 				if (error) { 
-					console.log(error);
+					Materialize.toast(error, 4000);
 				} else {
-					Router.log('home');
+					Router.go('home');
 				}
 			}
 		);
