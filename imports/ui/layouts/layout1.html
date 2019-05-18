@@ -1,12 +1,13 @@
 <template name='layoutOne'>
-	<nav class="nav-extended grey darken-4">
-		<div class="nav-wrapper">
-			<div class="container">
-				<a href="#" class="brand-logo">Organize it!</a>
+		<nav class="nav-extended green">
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Project management</a>
 				<!--<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="{{pathFor route='home'}}">Home</a></li>
 					{{#if currentUser}}
+						<li><a href="{{pathFor route='profile'}}">Profile</a></li>
+						<li><a href="{{pathFor route='groups'}}">Groups</a></li>
 						<li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
 						<li><a href="{{pathFor route='myAccount'}}">Account</a></li>
 						<li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
@@ -15,9 +16,8 @@
 					{{/if}}
 				</ul>
 			</div>
-		</div>
-	</nav>
-	<!--
+		</nav>
+		<!--
 		<ul class="sidenav" id="mobile-demo">
 			<li><a href="{{pathFor route='home'}}">Home</a></li>
 			{{#if currentUser}}
@@ -29,120 +29,10 @@
 			{{/if}}
 		</ul>
 	-->
-	<div class="container">
-		<article>
-			{{> yield}}
-		</article>
-	</div>
-	<!---->
-	{{> pagefooter}}
-</template>
+	<article>	
+		{{> yield}}
+	</article>
 
-<template name="pagefooter">
-	<footer class="page-footer grey darken-4">
-		<div class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<!--Contact Us-->
-					<div class="center">
-						<h4 style="padding: 11.25;">Contact Us</h4>
-					</div>
-					<div class="row" style="margin: 0px;">
-						<div class="col s12">
-							<div class="input-field">
-								<input id="name" type="text" class="validate" style="margin: 0px;">
-								<label for="name">Name</label>
-							</div>
-						</div>
-					</div>
-					<div class="row" style="margin: 0px;">
-						<div class="col s12">
-							<div class="input-field">
-								<input id="email_inline" type="email" class="validate" style="margin: 0px;">
-								<label for=" email_inline">Email</label>
-							</div>
-						</div>
-					</div>
-					<div class="row" style="margin: 0px;">
-						<form class="col s12">
-							<div class="row">
-								<div class="input-field col s12">
-									<textarea id="messagetext" class="materialize-textarea"
-										style="margin: 0px;"></textarea>
-									<label for="messagetext">Message:</label>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="row">
-						<div class="col s12 center">
-							<button class="btn waves-effect waves-light blue" type="submit" name="action">Send
-								<i class="material-icons right">send</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col l4 offset-l2 s12">
-					<div class="row">
-						<h5 class="white-text">Plan du site</h5>
-						<ul>
-							<li><a href="{{pathFor route='home'}}">Accueil</a></li>
-							{{#if currentUser}}
-								<li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
-								<li><a href="{{pathFor route='myAccount'}}">Account</a></li>
-								<li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
-							{{else}}
-								<li><a href="{{pathFor route='connection'}}">SignIn</a></li>
-							{{/if}}
-						</ul>
-					</div>
-					<div class="divider"></div>
-					<div class="row" style="padding-top: 15px">
-						<div class="col s12 center">
-							<div class="row">
-								<div class="col s3">
-									<div class="row">
-										<a class="btn-floating btn-small waves-effect waves-light blue">
-											<i class="material-icons">place</i>
-										</a>
-									</div>
-								</div>
-								<div class="col s3">
-									<div class="row">
-										<a class="btn-floating btn-small waves-effect waves-light blue">
-											<i class="material-icons">email</i>
-										</a>
-									</div>
-								</div>
-								<div class="col s3">
-									<div class="row">
-										<a class="btn-floating btn-small waves-effect waves-light blue">
-											<i class="material-icons">phone</i>
-										</a>
-									</div>
-								</div>
-								<div class="col s3">
-									<div class="row">
-										<a class="btn-floating btn-small waves-effect waves-light blue">
-											<i class="material-icons">explore</i>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="divider"></div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<div class="footer-copyright grey darken-3">
-			<div class="container">
-				© 2019 Copyright ENSTA Bretagne
-				<a class="grey-text text-lighten-4 right" href="https://www.facebook.com">facebook</a>
-			</div>
-		</div>
-	</footer>
 </template>
 
 

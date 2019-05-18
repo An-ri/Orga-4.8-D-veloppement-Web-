@@ -6,6 +6,10 @@ Router.route('/', {
 	name:'home',
 });
 
+Router.route('/groups', {
+	name:'groups',
+});
+
 Router.route('/tasks', {
 	name:'tasks',
 });
@@ -22,8 +26,8 @@ Router.route('/SignUp', {
 	name:'inscription',
 });
 
-Router.route('/myAccount', {
-	name:'myAccount',
+Router.route('/profile', {
+	name:'profile',
 });
 
 

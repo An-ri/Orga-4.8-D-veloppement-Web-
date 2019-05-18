@@ -1,22 +1,24 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
  
-import '../html/task.html';
+import '../html/group.html';
 
-Template.task.helpers({
+Template.group.helpers({
   isOwner() {
     return this.owner === Meteor.userId();
   },
 });
 
 
-Template.task.events({
+Template.group.events({
   'click .toggle-checked'() {
     // Set the checked property to the opposite of its current value
-    Meteor.call('tasks.setChecked', this._id, !this.checked);
+    Meteor.call('groups.setChecked', this._id, !this.checked);
   },
   'click .delete'() {
-    Meteor.call('tasks.remove', this._id);
+    Meteor.call('groups.remove', this._id);
   },
-  
+  'click .toggle-private'() {
+    Meteor.call('groups.setPrivate', this._id, !this.private);
+  },
 });

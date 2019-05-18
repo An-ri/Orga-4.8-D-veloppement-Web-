@@ -6,12 +6,12 @@ import { check } from 'meteor/check';
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-export const Tasks = new Mongo.Collection('tasks');
+export const Groups = new Mongo.Collection('groups');
 
 if (Meteor.isServer) {
   // This code only runs on the server
-  Meteor.publish('tasks', function tasksPublication() {
-    return Tasks.find({
+  Meteor.publish('groups', function tasksPublication() {
+    return Groups.find({
       $or: [
         { private: { $ne: true } },
         { owner: this.userId },
@@ -21,45 +21,58 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'tasks.insert'(text) {
+  'groups.insert'(text) {
     check(text, String);
  
-    // Make sure the user is logged in before inserting a task
+    // Make sure the user is logged in before inserting a group
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
  
-    Tasks.insert({
+    Groups.insert({
       text,
       owner: Meteor.userId(),
       username: Meteor.user().username,
     });
   },
-  'tasks.remove'(taskId) {
+  'groups.remove'(taskId) {
     check(taskId, String);
- 	  const task = Tasks.findOne(taskId);
-    if (task.owner !== Meteor.userId()) {
-      // make sure only the owner can delete it
+    const group = Groups.findOne(taskId);
+    if (group.private && group.owner !== Meteor.userId()) {
+      // If the group is private, make sure only the owner can delete it
       throw new Meteor.Error('not-authorized');
     }
-    Tasks.remove(taskId);
+    Groups.remove(taskId);
   },
-  'tasks.setChecked'(taskId, setChecked) {
+  'groups.setChecked'(taskId, setChecked) {
     check(taskId, String);
     check(setChecked, Boolean);
-    const task = Tasks.findOne(taskId);
-    if (task.owner !== Meteor.userId()) {
-      // make sure only the owner can check it off
+    const group = Groups.findOne(taskId);
+    if (group.private && group.owner !== Meteor.userId()) {
+      // If the group is private, make sure only the owner can check it off
       throw new Meteor.Error('not-authorized');
     }
-    Tasks.update(taskId, {
-    	$set: { checked: setChecked } 
- 	  });
+    Groups.update(taskId, {
+      $set: { checked: setChecked } 
+    });
+  },
+  'groups.setPrivate'(taskId, setToPrivate) {
+    check(taskId, String);
+    check(setToPrivate, Boolean);
+ 
+    const group = Groups.findOne(taskId);
+ 
+    // Make sure only the group owner can make a group private
+    if (group.owner !== Meteor.userId()) {
+      throw new Meteor.Error('not-authorized');
+    }
+ 
+    Groups.update(taskId, { $set: { private: setToPrivate } });
   },
 });
 
 Schema = {};
-Schema.Tasks =new SimpleSchema({
+Schema.Groups =new SimpleSchema({
     owner:{
       type: String,
       max: 200,
@@ -92,7 +105,14 @@ Schema.Tasks =new SimpleSchema({
             omit: true
       }
     },
-    
+    private:{
+      type: Boolean,
+      optional: true,
+      autoValue : false,
+      autoform: {
+            omit: true
+      }
+    },
     createdAt:{
       type: Date,
       denyUpdate: true,
@@ -109,4 +129,4 @@ Schema.Tasks =new SimpleSchema({
     }
 });
 
-Tasks.attachSchema(Schema.Tasks);
+Groups.attachSchema(Schema.Groups);

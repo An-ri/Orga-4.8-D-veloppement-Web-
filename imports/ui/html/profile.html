@@ -1,32 +1,20 @@
-<template name="myAccount">
-    <!--Read the user data from the data base-->
-    <!--Display user data (using the sign up form)-->
-    <!--Allow user to modify his data-->
-    <div class="container">
-        <div class="row">
-            <div class="col s2"></div>
-            <div class="col s8">
-            <div class="card">
-                <div class="card-image">
-                <img class="circle responsive-img" src="/images/man-avatar-profile-picture-vector-260nw-229692004.jpg">
-                <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                <pre>
-+ Add user details from data base
-    username
-    fullname
-    mail
-    password+hide/show
-    + change profile picture
-                </pre>
-                </div>
-                <div class="card-action">
-                <a href="#">Modify my informations</a>
-                </div>
-            </div>
-            </div>
-            <div class="col s2"></div>
-        </div>  
-    </div>     
+<template name='profile'>
+	<h1>Todo List ({{incompleteCount}})</h1>
+	<label class="hide-completed">
+		<input type="checkbox" />
+		Hide Completed Tasks
+	</label>
+	<div class="erreurs">Erreur : </div>
+	{{#if currentUser}}
+		<form class="new-task">
+			<input type="text" name="text" placeholder="Type to add new tasks" />
+		</form>
+	{{/if}}
+	
+	<ul>
+	{{#each tasks}}
+		{{> task}}
+	{{/each}}
+	</ul>
 </template>
+	  

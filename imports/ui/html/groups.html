@@ -1,0 +1,19 @@
+<template name='groups'>
+  <h1>Todo List ({{incompleteCount}})</h1>
+  <label class="hide-completed">
+    <input type="checkbox" />
+    Hide Completed Groups
+  </label>
+  <div class="erreurs">Erreur : </div>
+  {{#if currentUser}}
+    <form class="new-group">
+      <input type="text" name="text" placeholder="Type to add new groups" />
+    </form>
+  {{/if}}
+
+  <ul>
+  {{#each groups}}
+    {{> group}}
+  {{/each}}
+  </ul>
+</template>

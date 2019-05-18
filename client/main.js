@@ -3,6 +3,7 @@ import '../imports/startup/client/accounts-config.js'
 
 import '../imports/ui/layouts/layout1.js';
 import '../imports/ui/js/home.js';
+import '../imports/ui/js/groups.js';
 import '../imports/ui/js/tasks.js';
 import '../imports/ui/js/tasks2.js';
 import '../imports/ui/js/connection.js';
