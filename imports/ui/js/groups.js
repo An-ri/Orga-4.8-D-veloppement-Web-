@@ -1,17 +1,17 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { Groups } from '../../api/groups.js'
+import { Groups } from '../../api/groups.js';
 
 import '../js/group.js';
-import '../html/groups.html';
+import '../html/profile.html';
 
-Template.groups.onCreated(function bodyOnCreated() {
+Template.profile.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe('groups');
 });
 
-Template.groups.helpers({
+Template.profile.helpers({
   groups() {
     const instance = Template.instance();
     if (instance.state.get('hideCompleted')) {
@@ -26,7 +26,7 @@ Template.groups.helpers({
   },
 });
 
-Template.groups.events({
+Template.profile.events({
   'submit .new-group'(event) {
     // Prevent default browser form submit
     event.preventDefault();
