@@ -1,19 +1,90 @@
 <template name='profile'>
-    <h1>Todo List ({{incompleteCount}})</h1>
-    <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Tasks
-    </label>
-    <div class="erreurs">Erreur : </div>
-    {{#if currentUser}}
-        <form class="new-task">
-            <input type="text" name="text" placeholder="Type to add new tasks" />
-        </form>
-    {{/if}}
+    <!--
+    <div class="row">
+        <div class="col s4 m4">
+            <center>
+                <p>
+                    <img src="images/github.png" class="responsive-image circle profile-image">
+                                   
+                <form class="edit-profile" enctype="multipart/form-data">
+                    <label for="profileImage">choose profile image</label>
+                    <span id="filename"></span>
+                    <input type="file" name="profileImage" id="profileImage" class="black profileImage">
+                    <br />
+                    <button type="submit" value="Upload photo" id="profile-btn" class="btn btn-sml btn-primary">Upload
+                        photo</button>
+                </form> 
+            
+                </p>
+            </center>
 
-    <ul>
-        {{#each tasks}}
-            {{> task}}
-        {{/each}}
-    </ul>
+        </div>
+        <div class="col s8 m8 valign-wrapper">
+            <div class="row valign-wrapper">
+                username: {{currentUser.username}}
+            </div>
+            <div class="row valign-wrapper">
+                Mail: {{currentUser.emails.[0].address}}
+            </div>
+
+            <div class="row valign-wrapper">
+                Full name: {{currentUser.profile.firstname}} {{currentUser.profile.lastname}}
+            </div>
+            <div class="row valign-wrapper">
+                Birthday: {{currentUser.profile.birthday}}
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#profileImage:file").change(function () {
+                var filename = $(this).val();
+                $("span").text(filename);
+                $("label").hide();
+            });
+        });
+    </script>
+-->
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                    <label for="disabled">Disabled</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    This is an inline input field:
+                    <div class="input-field inline">
+                        <input id="email_inline" type="email" class="validate">
+                        <label for="email_inline">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </template>

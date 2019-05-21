@@ -20,7 +20,7 @@ Template.tasks.helpers({
     }
     // Otherwise, return all of the tasks
     return Tasks.find({}, { sort: { createdAt: -1 } });
-  }, 
+  },
   incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
   },
@@ -30,18 +30,18 @@ Template.tasks.events({
   'submit .new-task'(event) {
     // Prevent default browser form submit
     event.preventDefault();
- 
+
     // Get value from form element
     const target = event.target;
     const text = target.text.value;
- 
+
     // Insert a task into the collection
-    Meteor.call('tasks.insert', text,function(err, id){
-      if(err){
+    Meteor.call('tasks.insert', text, function (err, id) {
+      if (err) {
         $(".erreurs").append(err.reason);
-        $(".erreurs").css("display","block");
+        $(".erreurs").css("display", "block");
       }
-      else{
+      else {
         // Clear form
         target.text.value = '';
       }

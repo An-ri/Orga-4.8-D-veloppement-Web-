@@ -20,7 +20,7 @@ Template.groups.helpers({
     }
     // Otherwise, return all of the groups
     return Groups.find({}, { sort: { createdAt: -1 } });
-  }, 
+  },
   incompleteCount() {
     return Groups.find({ checked: { $ne: true } }).count();
   },
@@ -30,18 +30,18 @@ Template.groups.events({
   'submit .new-group'(event) {
     // Prevent default browser form submit
     event.preventDefault();
- 
+
     // Get value from form element
     const target = event.target;
     const text = target.text.value;
- 
+
     // Insert a group into the collection
-    Meteor.call('groups.insert', text,function(err, id){
-      if(err){
+    Meteor.call('groups.insert', text, function (err, id) {
+      if (err) {
         $(".erreurs").append(err.reason);
-        $(".erreurs").css("display","block");
+        $(".erreurs").css("display", "block");
       }
-      else{
+      else {
         // Clear form
         target.text.value = '';
       }
