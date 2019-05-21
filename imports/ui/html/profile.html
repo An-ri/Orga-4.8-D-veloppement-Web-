@@ -19,11 +19,21 @@
                         <div style="padding: 10px">
                             <div class="" style="padding: 5px; margin: 0px;">
                                 <div class="ubuntu">
-                                    <b>{{currentUser.username}}</b>
-                                    <br />
-                                    {{currentUser.profile.firstname}} {{currentUser.profile.lastname}}
-                                    <br />
-                                    {{currentUser.emails.[0].address}}
+                                    <div>
+                                        <b>
+                                            {{currentUser.username}}
+
+                                        </b>
+                                    </div>
+                                    <div>
+                                        {{currentUser.profile.firstname}} {{currentUser.profile.lastname}}
+                                    </div>
+                                    <div>
+                                        <a
+                                            href="mailto:{{currentUser.emails.[0].address}}?subject = Feedback&body = Message">
+                                            {{currentUser.emails.[0].address}}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
