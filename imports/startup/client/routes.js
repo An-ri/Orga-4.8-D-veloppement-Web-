@@ -6,16 +6,12 @@ Router.route('/', {
 	name:'home',
 });
 
-Router.route('/groups', {
-	name:'groups',
+Router.route('/profile', {
+	name:'profile',
 });
 
 Router.route('/tasks', {
 	name:'tasks',
-});
-
-Router.route('/tasks2', {
-	name:'tasks2',
 });
 
 Router.route('/SignIn', {
@@ -24,10 +20,6 @@ Router.route('/SignIn', {
 
 Router.route('/SignUp', {
 	name:'inscription',
-});
-
-Router.route('/profile', {
-	name:'profile',
 });
 
 
