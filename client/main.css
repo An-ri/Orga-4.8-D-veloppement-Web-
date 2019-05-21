@@ -155,3 +155,8 @@ header .hide-completed {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+}
