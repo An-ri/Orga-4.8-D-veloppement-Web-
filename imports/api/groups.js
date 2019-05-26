@@ -38,7 +38,7 @@ Meteor.methods({
   'groups.remove'(taskId) {
     check(taskId, String);
     const group = Groups.findOne(taskId);
-    if (group.private && group.owner !== Meteor.userId()) {
+    if (group.owner !== Meteor.userId()) {
       // If the group is private, make sure only the owner can delete it
       throw new Meteor.Error('not-authorized');
     }
@@ -48,7 +48,7 @@ Meteor.methods({
     check(taskId, String);
     check(setChecked, Boolean);
     const group = Groups.findOne(taskId);
-    if (group.private && group.owner !== Meteor.userId()) {
+    if (group.owner !== Meteor.userId()) {
       // If the group is private, make sure only the owner can check it off
       throw new Meteor.Error('not-authorized');
     }
