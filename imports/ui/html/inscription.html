@@ -1,13 +1,104 @@
 <template name="inscription">
     <div class="section"></div>
     <div class="container">
+        <!---->
+        <div class="center">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3"></div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Rejoignez notre communauté maintenant!</h3>
+                            <form id="form_signup" method="POST">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-label-group">
+                                            <input type="text" id="firstname" name="prenom" class="form-control"
+                                                required autofocus>
+                                            <label for="firstname">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-label-group">
+                                            <input type="text" id="lastname" name="prenom" class="form-control" required
+                                                autofocus>
+                                            <label for="lastname">Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-label-group">
+                                            <label for="birthday">Date de naissance :</label>
+                                            <input type="date" class="datepicker form-control" name="birthday"
+                                                id="birthday">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-label-group">
+                                            <div class="radio">
+                                                <label for="sexe">Sexe:</label> &nbsp;&nbsp;
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sexe" id="M">Man
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="sexe" id="W">Women
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input type="text" id="username" name="username" class="form-control" required
+                                        autofocus>
+                                    <label for="username">user name</label>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input type="text" id="email" name="email" class="form-control" required autofocus>
+                                    <label for="email">E-mail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-label-group">
+                                            <input type="password" id="password" name="password" class="form-control"
+                                                required autofocus>
+                                            <label for="password">password</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-label-group">
+                                            <input type="password" id="passwordConf" name="passwordConf"
+                                                class="form-control" required autofocus>
+                                            <label for="passwordConf">Confirm your password</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-lg btn-success btn-block text-uppercase" name="btn_register"
+                                    type="submit">
+                                    Register
+                                </button>
+                                <!--<hr class="my-4">-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3"></div>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <!--
         <div class="col l9 m10 s9">
             <div class="col l9 m10 s9">
                 <div class="container">
                     <form id='form_signup' method='post'>
                         <div class="card-panel z-depth-3">
                             <h4 class="center">Inscription</h4>
-                            <p class="center">Rejoignez notre communauté maintenant !</p>
+                            <p class="center">Rejoignez notre communauté maintenant!</p>
                             <p></p>
                             <p class="center"></p>
                             <div class="row">
@@ -81,6 +172,7 @@
                 </div>
             </div>
         </div>
+    -->
     </div>
 </template>
 

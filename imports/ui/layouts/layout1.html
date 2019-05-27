@@ -8,73 +8,118 @@
 	{{> footertemp}}
 </template>
 <template name="navbartemp">
-	<nav class="nav-extended grey darken-4">
-		<div class="nav-wrapper">
-			<div class="container">
-				<a href="#" class="brand-logo">Organize it</a>
-				<!--<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="{{pathFor route='home'}}">Home</a></li>
-					{{#if currentUser}}
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Organize it!</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="{{pathFor route='home'}}">Home</a></li>
+						{{#if currentUser}}
 						<li><a href="{{pathFor route='profile'}}">Profile</a></li>
 						<li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
+						{{/if}}
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						{{#if currentUser}}
 						<li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
-					{{else}}
+						{{else}}
 						<li><a href="{{pathFor route='connection'}}">SignIn</a></li>
-					{{/if}}
-				</ul>
+						{{/if}}
+					</ul>
+				</div>
 			</div>
 		</div>
 	</nav>
 </template>
 
 <template name="footertemp">
-	<footer class="page-footer grey darken-4">
-		<div class="">
+	<footer class="mainfooter" role="contentinfo" style="background-color: #222; color: rgb(114, 109, 109)">
+		<div class="footer-middle">
 			<div class="container">
 				<div class="row">
-					<div class="col l6 s12">
-						<h5 class="white-text">Who are we ?</h5>
-						<p class="grey-text text-lighten-4">
-							Meteor developper!
-						</p>
+					<div class="col-md-3 col-sm-6">
+						<!--Column1-->
+						<div class="footer-pad">
+							<div class="panel-body">
+								<h4>Plan du site</h4>
+								<ul class="list-unstyled">
+									<li><a href="{{pathFor route='home'}}">Home</a></li>
+									{{#if currentUser}}
+									<li><a href="{{pathFor route='profile'}}">Profile</a></li>
+									<li><a href="{{pathFor route='tasks'}}">Tasks</a></li>
+									<li><a href="{{pathFor route='home'}}" id='sign_out'>SignOut</a></li>
+									{{else}}
+									<li><a href="{{pathFor route='connection'}}">SignIn</a></li>
+									{{/if}}
+								</ul>
+							</div>
+						</div>
 					</div>
-					<div class="col l4 offset-l2 s12">
-						<h5 class="white-text">Plan du site</h5>
-						<ul>
-							<li><a class="grey-text text-lighten-3" href="{{pathFor route='home'}}">Home</a></li>
-							{{#if currentUser}}
-								<li><a class="grey-text text-lighten-3" href="{{pathFor route='profile'}}">Profile</a>
-								</li>
-								<li><a class="grey-text text-lighten-3" href="{{pathFor route='tasks'}}">Tasks</a></li>
-							{{else}}
-								<li><a href="{{pathFor route='connection'}}">SignIn</a></li>
-							{{/if}}
-						</ul>
+					<div class="col-md-3 col-sm-6">
+						<!--Column1-->
+						<div class="footer-pad">
+							<div class="panel-body">
+								<h4>Contact Us</h4>
+								<ul class="list-unstyled">
+
+									<li>By mail: <a href="mailto:mahmoudsouayfan@gmail.com?Subject=meteor%20test"
+											target="_top">mail</a></li>
+									<li>By phone: <a href="#">+33 7 21 21 21 21</a></li>
+									<li></li>
+									<li></li>
+									<li>
+										<h5>Or visit us in our location:</h5>
+										<a
+											href="https://www.google.com/maps/place/2+Rue+Fran%C3%A7ois+Verny,+29200+Brest/@48.4192023,-4.4746679,17z/data=!3m1!4b1!4m5!3m4!1s0x4816bbba8b456fed:0x9489a42be32acb19!8m2!3d48.4191988!4d-4.4724792">
+											2 rue François Verny,
+											Brest 29200
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<!--Column1-->
+						<div class="footer-pad">
+							<div class="panel-body">
+								<h4>Who are we ?</h4>
+								<ul class="list-unstyled">
+									<p class="text-justify">
+										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+										Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+										unknown printer took a galley of type and scrambled it to make a type specimen
+										book.
+									</p>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="panel-body">
+							<h4>Follow Us</h4>
+							<ul class="social-network social-circle social-media-list">
+								<li><a href="#" class="fa fa-facebook"></a></li>
+								<li><a href="#" class="fa fa-youtube"></a></li>
+								<li><a href="#" class="fa fa-instagram"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 copy">
+						<p class="text-center">&copy; Copyright 2019 - Meteor devteam</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="footer-copyright grey darken-4">
-			<div class="container">
-				<div class="center">
-					<a href="#" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-youtube"></a>
-					<a href="#" class="fa fa-instagram"></a>
-					<a href="#" class="fa fa-snapchat-ghost"></a>
-				</div>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="footer-copyright grey darken-3">
-			<div class="container">
-				<div class="valigne-wrapper">
-					<div class="left">
-						<div class="grey-text text-lighten-3">© 2019 Copyright to ENSTA-B</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="divider"></div>
 	</footer>
 </template>
