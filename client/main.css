@@ -393,3 +393,146 @@ body {
 .box:hover .text {
   transform: rotateY(20deg) skewY(-3deg);
 }
+
+@use postcss-nested;
+:root {
+  --dark: #171717;
+  --gray1: #17212c;
+  --gray2: #10171f;
+  --placeholder1: #1a2735;
+  --placeholder2: #17222e;
+  --accent1: #ff0066;
+  --accent2: #1ba1b1;
+  --accent3: #2631e2;
+  --shadow: rgba(0, 0, 0, 0.5);
+  
+  --cardGradient: linear-gradient(to bottom, var(--gray1), var(--gray2));
+  --accentGradient: linear-gradient(45deg, var(--accent3), var(--accent2), var(--accent1) 80%);
+  --placeholderGradient: linear-gradient(to left, var(--placeholder1), var(--placeholder2));
+  
+  --width: 70vmin;
+  --height: 65vmin;
+  --radius: 3vmin;
+  --border: -4px;
+}
+.card-group-list {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  padding: 4vmin;
+  background-color: linear-gradient(#10171f, #5780af);
+  background-image: var(--cardGradient);
+  box-shadow: 0 16px 120px 0 var(--shadow);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+}
+.card-group-list::before, .card-group-list::after {
+  content: '';
+  position: absolute;
+  top: var(--border);
+  left: var(--border);
+  bottom: var(--border);
+  right: var(--border);
+  background-color: var(--accent1);
+  border-radius: var(--radius);
+  background-image: var(--accentGradient);
+  z-index: -1;
+}
+.card-group-list::before {
+  filter: blur(20px);
+  opacity: 0.4;
+  }
+
+.card {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  padding: 4vmin;
+  background-color: linear-gradient(#10171f, #5780af);
+  background-image: var(--cardGradient);
+  box-shadow: 0 16px 120px 0 var(--shadow);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  
+}
+  .card::before, .card::after {
+    content: '';
+    position: absolute;
+    top: var(--border);
+    left: var(--border);
+    bottom: var(--border);
+    right: var(--border);
+    background-color: var(--accent1);
+    border-radius: var(--radius);
+    background-image: var(--accentGradient);
+    z-index: -1;
+  }
+  .card::before {
+    filter: blur(20px);
+    opacity: 0.4;
+  }
+
+.label {
+  position: absolute;
+  top: var(--border);
+  right: var(--border);
+  border-width: 25px;
+  border-style: solid;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: var(--accent1);
+  border-top-color: var(--accent1);
+  border-radius: 0 var(--radius) 0 0;
+  @media (min-width: 560px) {
+    border-width: 35px;
+  }
+}
+
+.placeholder-avatar {
+  width: 20vmin;
+  height: 20vmin;
+  margin: 6vmin auto;
+  background-color: var(--placeholder1);
+  background-image: var(--placeholderGradient);
+  border-radius: 50%;
+}
+
+.placeholder-title {
+  width: 25vmin;
+  height: 4vmin;
+  margin: 0 auto 4vmin;
+  background-color: var(--placeholder1);
+  background-image: var(--placeholderGradient);
+  border-radius: var(--radius);
+}
+
+.placeholder-text span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 1vmin 0;
+  background-color: var(--placeholder1);
+  background-image: var(--placeholderGradient);
+  border-radius: var(--radius);
+  padding: 6px;
+}
+
+
+.center-user-profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.personnal-info{
+  color: #9d9d9d;
+  margin: 6px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.option {
+  color: #c7c7c7;
+}

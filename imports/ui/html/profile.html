@@ -1,5 +1,72 @@
 <template name='profile'>
     <!--Display User informations-->
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="container">
+                <div class="row">
+                    <div class="center-user-profile">
+                        <div class='card'>
+
+                            <div class='placeholder-avatar'>
+                                <img class="img-circle" style="max-height:100%; max-width:100%;"
+                                    src="images/github.png">
+                            </div>
+                            <div class='placeholder-title'>
+                                <div class="personnal-info">
+                                    <span class="option">username: </span>{{currentUser.username}}
+                                </div>
+                            </div>
+                            <div class='placeholder-text'>
+                                <div class="personnal-info">
+                                    <span>
+                                        Name: {{currentUser.profile.firstname}}
+                                        {{currentUser.profile.lastname}}
+                                    </span>
+                                    <span>
+                                        <a
+                                            href="mailto:{{currentUser.emails.[0].address}}?subject = Feedback&body = Message">
+                                            {{currentUser.emails.[0].address}}</a>
+                                    </span>
+                                    <span>
+                                        <label>Subscription: </label>
+                                        {{incompleteCount}} group(s)
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+
+            </div>
+        </div>
+    </div>
+    <!--
+    <h1>Todo List ({{incompleteCount}})</h1>
+    <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Groups
+    </label>
+    <div class="erreurs">Erreur : </div>
+    {{#if currentUser}}
+        <form class="new-group">
+            <input type="text" name="text" placeholder="Type to add new groups" />
+        </form>
+    {{/if}}
+
+    <ul>
+        {{#each groups}}
+            {{> group}}
+        {{/each}}
+    </ul>
+-->
+</template>
+
+
+
+<!--
+
+
     <div class="row"></div>
     <div class="row">
         <div class="col s12 m12">
@@ -79,13 +146,13 @@
 
                         <div class="erreurs">Erreur : </div>
                         {{#if currentUser}}
-                            <form class="new-group">
-                                <input type="text" name="text" placeholder="Type to add new groups" />
-                            </form>
+                        <form class="new-group">
+                            <input type="text" name="text" placeholder="Type to add new groups" />
+                        </form>
                         {{/if}}
                         <ul>
                             {{#each groups}}
-                                {{> group}}
+                            {{> group}}
                             {{/each}}
                         </ul>
                     </div>
@@ -93,23 +160,6 @@
             </div>
         </div>
     </div>
-    <!--
-    <h1>Todo List ({{incompleteCount}})</h1>
-    <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Groups
-    </label>
-    <div class="erreurs">Erreur : </div>
-    {{#if currentUser}}
-        <form class="new-group">
-            <input type="text" name="text" placeholder="Type to add new groups" />
-        </form>
-    {{/if}}
 
-    <ul>
-        {{#each groups}}
-            {{> group}}
-        {{/each}}
-    </ul>
+
 -->
-</template>
