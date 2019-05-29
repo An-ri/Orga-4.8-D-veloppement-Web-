@@ -3,182 +3,49 @@
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12">
             <div class="container">
-                <div class="row">
-                    <div class="center-user-profile">
-                        <div class='card'>
-                            <div style="width: 100%; height:100%;">
-                                <div class='placeholder-avatar'>
-                                    <img class="img-circle" style="max-height:100%; max-width:100%;"
-                                        src="images/github.png">
-                                </div>
-                                <div class='placeholder-title'>
-                                    <div class="personnal-info">
-                                        <span class="option">username: </span>{{currentUser.username}}
-                                    </div>
-                                </div>
-                                <div class="placeholder-text">
-                                    <div class="personnal-info">
-                                        <span>
-                                            Name: {{currentUser.profile.firstname}}
-                                            {{currentUser.profile.lastname}}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="placeholder-text">
-                                    <div class="personnal-info">
-                                        <span>
-                                            <a
-                                                href="mailto:{{currentUser.emails.[0].address}}?subject = Feedback&body = Message">
-                                                {{currentUser.emails.[0].address}}
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="placeholder-text">
-                                    <div class="personnal-info">
-                                        <span>Subscription: {{incompleteCount}} group(s)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p></p>
-                <div class="row">
-                    <div class="center-user-profile">
-                        <div class="card-group-list">
-                            <div style="width: 100%; height:100%;">
-                                <h1>Groups ({{incompleteCount}})</h1>
-                                <label class="hide-completed">
-                                    <input type="checkbox" />
-                                    Hide Completed Groups
-                                </label>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label class="showAll-Groups">
-                                    <input type="checkbox" />
-                                    Show all Groups
-                                </label>
-                                <div class="erreurs">Erreur : </div>
-                                {{#if currentUser}}
-                                <form class="new-group">
-                                    <input type="text" name="text" placeholder="Type to add new groups" />
-                                </form>
-                                {{/if}}
-
+                
+                    <div class="center-item">
+                        <div class="card-container">
+                            <span class="pro">PRO User</span>
+                            <img src="images/github.png" alt="user" />
+                            <h3>{{currentUser.profile.firstname}} {{currentUser.profile.lastname}}</h3>
+                            <h6>Pseudo: {{currentUser.username}}</h6>
+                            <div class="buttons">
+                                <button class="primary"
+                                    onclick="location.href='mailto:mahmoudsouayfan@gmail.com'">Mail</button>
                             </div>
                             <div class="skills">
                                 <ul>
-                                    {{#each groups}}
-                                        {{> group}}
-                                    {{/each}}
+                                    subscribed in <li>{{incompleteCount}}</li> groups
                                 </ul>
-
-                                <ul>
-                                    {{#each tasks}}
-                                        {{> task}}
-                                    {{/each}}
-                                </ul>
-
                             </div>
                         </div>
                     </div>
-                </div>
+              
                 <p></p>
-            </div>
-        </div>
-    </div>
-</template>
-
-<!--
-
-
-    <div class="row"></div>
-    <div class="row">
-        <div class="col s12 m12">
-            <div class="card white darken-2">
-                <div class="row"
-                    style="border: 2px solid red;  border-radius: 8px; padding: 0px; background-color: aliceblue">
-                    <div class="center">
-                        <div class="col s12 m3" style="padding: 0px;">
-                            <div style="padding: 10px">
-                                <div class="card" style="padding: 5px; margin: 0px;">
-                                    <img class="circle responsive-img z-depth-5" style="margin: 0px; padding: 0px"
-                                        src="images/github.png">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m9" style="padding: 0px; margin: 0px">
-                        <div style="padding: 10px">
-                            <div class="" style="padding: 5px; margin: 0px;">
-                                <div class="ubuntu">
-                                    <table style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th><label style="font-size: 16px;">User: </label></th>
-                                                <th>{{currentUser.username}}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <label style="font-size: 16px;">Name: </label>
-                                                </td>
-                                                <td>
-                                                    {{currentUser.profile.firstname}}
-                                                    {{currentUser.profile.lastname}}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label style="font-size: 16px;">Mail: </label>
-                                                </td>
-                                                <td>
-                                                    <a
-                                                        href="mailto:{{currentUser.emails.[0].address}}?subject = Feedback&body = Message">
-                                                        {{currentUser.emails.[0].address}}
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label style="font-size: 16px;">Subscription: </label>
-                                                </td>
-                                                <td>
-                                                    Subscribed in {{incompleteCount}} group(s)
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m12">
-            <div class="card white darken-2">
-                <div class="row"
-                    style="border: 2px solid red;  border-radius: 8px; padding: 10px; background-color: aliceblue">
-                    <div class="col s12 m12">
-                        <h1>Groups:</h1>
-
+                <div class="row">
+                    <div class="tasks-card-container">
+                        <h1>Groups:
+                            <!--({{incompleteCount}})-->
+                        </h1>
                         <label class="hide-completed">
                             <input type="checkbox" />
                             Hide Completed Groups
                         </label>
+                        <label class="showAll-Groups">
+                            <input type="checkbox" />
+                            Show all Groups
+                        </label>
+
                         <div class="erreurs">Erreur : </div>
                         {{#if currentUser}}
                         <form class="new-group">
                             <input type="text" name="text" placeholder="Type to add new groups" />
                         </form>
                         {{/if}}
+
                         <div class="card-columns">
+                        GROUPS:
                             {{#each groups}}
                             <div class="card">
                                 <div class="card-block">
@@ -187,6 +54,18 @@
                             </div>
                             {{/each}}
                         </div>
+
+                        <div class="card-columns">
+                        TASKS:
+                            {{#each tasks}}
+                            <div class="card">
+                                <div class="card-block">
+                                    {{> task}}
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+
                     </div>
                 </div>
                 <p></p>
