@@ -23,6 +23,7 @@ aldeed:collection2-core
 aldeed:autoform 
 aldeed:schema-index
 aldeed:schema-deny
+accounts-base 
 accounts-ui 
 accounts-password  
 session
