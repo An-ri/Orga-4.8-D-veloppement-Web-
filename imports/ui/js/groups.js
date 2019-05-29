@@ -18,6 +18,12 @@ Template.profile.helpers({
       // If hide completed is checked, filter groups
       return Groups.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
+
+    if (instance.state.get('showAllGroups')) {
+      // If show all groups is checked
+      return Groups.find({ }, { sort: { createdAt: -1 } });
+    }
+
     // Otherwise, return all of the groups
     return Groups.find({ owner : Meteor.userId() }, { sort: { createdAt: -1 } });
   },
@@ -49,5 +55,8 @@ Template.profile.events({
   },
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
+  },
+  'change .showAll-Groups input'(event, instance) {
+    instance.state.set('showAllGroups', event.target.checked);
   },
 });

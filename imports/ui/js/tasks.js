@@ -6,6 +6,7 @@ import { Tasks } from '../../api/tasks.js'
 import '../js/task.js';
 import '../html/tasks.html';
 
+
 Template.tasks.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe('tasks');
@@ -50,4 +51,30 @@ Template.tasks.events({
   'change .hide-completed input'(event, instance) {
     instance.state.set('hideCompleted', event.target.checked);
   },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import '../html/profile.html';
+Template.profile.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('tasks');
+});
+
+Template.profile.helpers({
+  tasks() {
+      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+    },
 });

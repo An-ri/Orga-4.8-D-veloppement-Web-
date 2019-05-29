@@ -53,6 +53,15 @@
                                     <input type="checkbox" />
                                     Hide Completed Groups
                                 </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="showAll-Groups">
+                                    <input type="checkbox" />
+                                    Show all Groups
+                                </label>
                                 <div class="erreurs">Erreur : </div>
                                 {{#if currentUser}}
                                 <form class="new-group">
@@ -62,9 +71,16 @@
 
                                 <ul>
                                     {{#each groups}}
-                                    {{> group}}
+                                        {{> group}}
                                     {{/each}}
                                 </ul>
+
+                                <ul>
+                                    {{#each tasks}}
+                                        {{> task}}
+                                    {{/each}}
+                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -74,8 +90,6 @@
         </div>
     </div>
 </template>
-
-
 
 <!--
 
