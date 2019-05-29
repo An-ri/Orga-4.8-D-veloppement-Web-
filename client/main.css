@@ -287,18 +287,13 @@ header .hide-completed {
   background-image: url("images/home-bg.jpg");
 }
 
-#footer{
-  bottom:0;
-  width:100%;
-  height:90px;
- }
-
-
-
-
-
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+article{
+  width: auto;
+  height: auto;
 }
 
 .box {
@@ -415,9 +410,9 @@ body {
   --border: -4px;
 }
 .card-group-list {
-  position: absolute;
+  position: relative;
   width: var(--width);
-  height: var(--height);
+  height: auto;
   padding: 4vmin;
   background-color: linear-gradient(#10171f, #5780af);
   background-image: var(--cardGradient);
@@ -482,9 +477,6 @@ body {
   border-right-color: var(--accent1);
   border-top-color: var(--accent1);
   border-radius: 0 var(--radius) 0 0;
-  @media (min-width: 560px) {
-    border-width: 35px;
-  }
 }
 
 .placeholder-avatar {
@@ -513,7 +505,6 @@ body {
   background-color: var(--placeholder1);
   background-image: var(--placeholderGradient);
   border-radius: var(--radius);
-  padding: 6px;
 }
 
 
