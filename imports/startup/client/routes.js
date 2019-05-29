@@ -37,6 +37,5 @@ Router.onBeforeAction(function() {
 		"connection",
 		"inscription",
 		"home",
-		"liste"
 	]
 });
