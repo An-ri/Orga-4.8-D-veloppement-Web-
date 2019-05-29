@@ -3,39 +3,39 @@ Router.configure({
 });
 
 Router.route('/', {
-	name:'home',
+	name: 'home',
 });
 
 Router.route('/profile', {
-	name:'profile',
+	name: 'profile',
 });
 
 Router.route('/tasks', {
-	name:'tasks',
+	name: 'tasks',
 });
 
 Router.route('/SignIn', {
-	name:'connection',
+	name: 'connection',
 });
 
 Router.route('/SignUp', {
-	name:'inscription',
+	name: 'inscription',
 });
 
 
-Router.onBeforeAction(function() {
+Router.onBeforeAction(function () {
 
-    if (!Meteor.userId()) {
+	if (!Meteor.userId()) {
 		this.render("connection");
 	} else {
-		this.next(); 
+		this.next();
 	}
 
 
 }, {
-	except: [
-		"connection",
-		"inscription",
-		"home",
-	]
-});
+		except: [
+			"connection",
+			"inscription",
+			"home",
+		]
+	});

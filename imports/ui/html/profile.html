@@ -69,6 +69,8 @@
                                 </form>
                                 {{/if}}
 
+                            </div>
+                            <div class="skills">
                                 <ul>
                                     {{#each groups}}
                                         {{> group}}
@@ -167,26 +169,29 @@
                         <h1>Groups:</h1>
 
                         <label class="hide-completed">
-                            <input type="checkbox" class="browser-default" id="hide-chk" />
-                            <label for="hide-chk">Hide Completed Groups</label>
+                            <input type="checkbox" />
+                            Hide Completed Groups
                         </label>
-
                         <div class="erreurs">Erreur : </div>
                         {{#if currentUser}}
                         <form class="new-group">
                             <input type="text" name="text" placeholder="Type to add new groups" />
                         </form>
                         {{/if}}
-                        <ul>
+                        <div class="card-columns">
                             {{#each groups}}
-                            {{> group}}
+                            <div class="card">
+                                <div class="card-block">
+                                    {{> group}}
+                                </div>
+                            </div>
                             {{/each}}
-                        </ul>
+                        </div>
                     </div>
                 </div>
+                <p></p>
+                <p></p>
             </div>
         </div>
     </div>
-
-
--->
+</template>
