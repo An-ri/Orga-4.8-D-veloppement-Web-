@@ -19,7 +19,7 @@
                             </ul>
                         </div>
                     </div>
-              </div>
+                </div>
                 <p></p>
                 <div class="row">
                     <div class="tasks-card-container">
@@ -41,29 +41,35 @@
                             <input type="text" name="text" placeholder="Type to add new groups" />
                         </form>
                         {{/if}}
-
-                        <div class="card-columns">
-                        GROUPS:
-                            {{#each groups}}
-                            <div class="card">
-                                <div class="card-block">
-                                    {{> group}}
+                        <p>GROUPS:</p>
+                        <div class="container">
+                            <div class="card-columns">
+                                {{#each groups}}
+                                <div class="card-x">
+                                    <div class="tasks-card-container-x">
+                                        {{> group}}
+                                    </div>
                                 </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
                         </div>
-
-                        <div class="card-columns">
-                        TASKS:
-                            {{#each tasks}}
-                            <div class="card">
-                                <div class="card-block">
-                                    {{> task}}
+                        <p>TASKS:</p>
+                        {{#if currentUser}}
+                        <form class="new-task">
+                            <input type="text" name="text" placeholder="Type to add new tasks" />
+                        </form>
+                        {{/if}}
+                        <div class="container">
+                            <div class="card-columns">
+                                {{#each tasks}}
+                                <div class="card-x">
+                                    <div class="tasks-card-container-x">
+                                        {{> task}}
+                                    </div>
                                 </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
                         </div>
-
                     </div>
                 </div>
                 <p></p>
