@@ -19,7 +19,7 @@ Template.profile.helpers({
       return Groups.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
     // Otherwise, return all of the groups
-    return Groups.find({ owner : Meteor.userId() }, { sort: { createdAt: -1 } });
+    return Groups.find({ owner: Meteor.userId() }, { sort: { createdAt: -1 } });
   },
   incompleteCount() {
     return Groups.find({ checked: { $ne: true } }).count();
