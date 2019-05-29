@@ -44,29 +44,35 @@
                     </div>
                 </div>
                 <p></p>
+                <div class="row">
+                    <div class="center-user-profile">
+                        <div class="card-group-list">
+                            <div style="width: 100%; height:100%;">
+                                <h1>Todo List ({{incompleteCount}})</h1>
+                                <label class="hide-completed">
+                                    <input type="checkbox" />
+                                    Hide Completed Groups
+                                </label>
+                                <div class="erreurs">Erreur : </div>
+                                {{#if currentUser}}
+                                <form class="new-group">
+                                    <input type="text" name="text" placeholder="Type to add new groups" />
+                                </form>
+                                {{/if}}
 
+                                <ul>
+                                    {{#each groups}}
+                                    {{> group}}
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
             </div>
         </div>
     </div>
-    <!--
-    <h1>Todo List ({{incompleteCount}})</h1>
-    <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Groups
-    </label>
-    <div class="erreurs">Erreur : </div>
-    {{#if currentUser}}
-        <form class="new-group">
-            <input type="text" name="text" placeholder="Type to add new groups" />
-        </form>
-    {{/if}}
-
-    <ul>
-        {{#each groups}}
-            {{> group}}
-        {{/each}}
-    </ul>
--->
 </template>
 
 
